@@ -30,6 +30,10 @@ jobs:
         id: set-up-homebrew
         uses: Homebrew/actions/setup-homebrew@4790763c0a3ba4036f72634dc079c4a7dfcd4878 # 2026.10.19.1
 
+      - name: Set up git
+        id: git_setup
+        uses: Homebrew/actions/git-user-config@4790763c0a3ba4036f72634dc079c4a7dfcd4878 # 2026.10.19.1
+
       - name: Cache Homebrew Bundler RubyGems
         id: cache
         uses: actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # 6.1.0
@@ -44,6 +48,8 @@ jobs:
 
       - name: Bump cask version
         env:
+          HOMEBREW_GIT_COMMITTER_NAME: ${{ steps.git_setup.outputs.name }}
+          HOMEBREW_GIT_COMMITTER_EMAIL: ${{ steps.git_setup.outputs.email }}
           CASK: ${{ inputs.cask }}
           VERSION: ${{ inputs.version }}
           URL_OPTION: ${{ case(inputs.url != '', format('--url ''{0}''', inputs.url), '') }}
