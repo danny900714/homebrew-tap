@@ -49,7 +49,7 @@ jobs:
           SHA256_OPTION: ${{ case(inputs.sha256 != '', format('--sha256 ''{0}''', inputs.sha256), '') }}
         run: |
           # shellcheck disable=SC2086
-          brew bump-cask-pr --write-only --commit --version "$VERSION" $URL_OPTION $SHA256_OPTION $CASK
+          brew bump-cask-pr -d --write-only --no-audit --commit --version "$VERSION" $URL_OPTION $SHA256_OPTION $CASK
 
       - name: Try pushing
         uses: Homebrew/actions/git-try-push@4790763c0a3ba4036f72634dc079c4a7dfcd4878 # 2026.10.19.1
