@@ -19,6 +19,7 @@ on:
 
 jobs:
   bump-cask:
+    name: Bump cask
     runs-on: ubuntu-latest
 
     permissions:
