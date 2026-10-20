@@ -1,0 +1,57 @@
+name: Bump cask
+on:
+  workflow_dispatch:
+    inputs:
+      cask:
+        description: The token of the cask to bump
+        required: true
+        type: string
+      version:
+        description: The new version for the cask
+        required: true
+        type: string
+      url:
+        description: The url for the new download
+        type: string
+      sha256:
+        description: The SHA-256 checksum of the new download
+        type: string
+
+jobs:
+  bump-cask:
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: write
+
+    steps:
+      - name: Set up Homebrew
+        id: set-up-homebrew
+        uses: Homebrew/actions/setup-homebrew@4790763c0a3ba4036f72634dc079c4a7dfcd4878 # 2026.10.19.1
+
+      - name: Cache Homebrew Bundler RubyGems
+        id: cache
+        uses: actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # 6.1.0
+        with:
+          path: ${{ steps.set-up-homebrew.outputs.gems-path }}
+          key: ${{ runner.os }}-rubygems-${{ steps.set-up-homebrew.outputs.gems-hash }}
+          restore-keys: ${{ runner.os }}-rubygems-
+
+      - name: Install Homebrew Bundler RubyGems
+        if: steps.cache.outputs.cache-hit != 'true'
+        run: brew install-bundler-gems
+
+      - name: Bump cask version
+        env:
+          CASK: ${{ inputs.cask }}
+          VERSION: ${{ inputs.version }}
+          URL_OPTION: ${{ case(inputs.url != '', format('--url ''{0}''', inputs.url), '') }}
+          SHA256_OPTION: ${{ case(inputs.sha256 != '', format('--sha256 ''{0}''', inputs.sha256), '') }}
+        run: |
+          # shellcheck disable=SC2086
+          brew bump-cask-pr --write-only --commit --version "$VERSION" $URL_OPTION $SHA256_OPTION $CASK
+
+      - name: Try pushing
+        uses: Homebrew/actions/git-try-push@4790763c0a3ba4036f72634dc079c4a7dfcd4878 # 2026.10.19.1
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
