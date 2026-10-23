@@ -1,18 +1,32 @@
-# Danny900714 Tap
+# `danny900714/tap`
 
-## How do I install these formulae?
+Home for macOS software managed by [Tzu-Hsien Chao](https://github.com/danny900714).
 
-`brew install danny900714/tap/<formula>`
+## Getting started
 
-Or `brew tap danny900714/tap` and then `brew install <formula>`.
+First, add the tap:
 
-Or, in a `brew bundle` `Brewfile`:
-
-```ruby
-tap "danny900714/tap"
-brew "<formula>"
+```shell
+brew tap danny900714/tap
+brew trust danny900714/tap
 ```
 
-## Documentation
+Then install any formulae or cask from it:
 
-`brew help`, `man brew` or check [Homebrew's documentation](https://docs.brew.sh).
+```shell
+brew install danny900714/tap/<package>
+```
+
+One tap, one command, no dialogs. No dragging icons into folders.
+
+## What's inside this tap
+
+### Casks
+
+| Cask                                      | Version                                                                                                                                                            | Source code                                         |
+|-------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------|
+| [better-lyrics](./Casks/better-lyrics.rb) | [![GitHub Release](https://img.shields.io/github/v/release/danny900714/better-lyrics-safari)](https://github.com/danny900714/better-lyrics-safari/releases/latest) | https://github.com/danny900714/better-lyrics-safari |
+
+## License
+
+Code is under the [BSD 2-Clause "Simplified" License](./LICENSE).
