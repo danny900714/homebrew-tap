@@ -1,6 +1,6 @@
 cask "better-lyrics" do
-  version "3.0.0+safari.0"
-  sha256 "8e31cb267aed493f1359352fd55d984115726af41b672d91672743c1ab56f574"
+  version "3.0.1+safari.0"
+  sha256 "dadcfe1e708ee653aed8e8fb5551c39162ecdcce8ac17f962b31ca51813e8f16"
 
   url "https://github.com/danny900714/better-lyrics-safari/releases/download/v#{version}/better-lyrics-#{version}.dmg"
   name "Better Lyrics"
