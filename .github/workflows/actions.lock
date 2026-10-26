@@ -5,7 +5,7 @@ version: 'v0.0.3'
 workflows:
     '.github/workflows/bump-cask.yml':
         - 'actions/cache@v6.1.0'
-        - 'homebrew/actions@2026.10.19.1'
+        - 'homebrew/actions@2026.10.26.1'
         - 'planetscale/ghcommit-action@v0.2.22'
 dependencies:
     'actions/cache@v6.1.0':
@@ -13,9 +13,9 @@ dependencies:
         commit: 'sha1-55cc8345863c7cc4c66a329aec7e433d2d1c52a9'
         owner_id: 44036562
         repo_id: 215566462
-    'homebrew/actions@2026.10.19.1':
-        ref: '2026.10.19.1'
-        commit: 'sha1-4790763c0a3ba4036f72634dc079c4a7dfcd4878'
+    'homebrew/actions@2026.10.26.1':
+        ref: '2026.10.26.1'
+        commit: 'sha1-d482da0e602890d3160aade42e72c8556103bf04'
         owner_id: 1503512
         repo_id: 202511568
     'planetscale/ghcommit-action@v0.2.22':
