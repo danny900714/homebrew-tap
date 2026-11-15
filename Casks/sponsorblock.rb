@@ -6,7 +6,7 @@ cask "sponsorblock" do
   name "SponsorBlock for YouTube"
   desc "Skip sponsorships, subscription begging and more on YouTube videos"
   homepage "https://github.com/danny900714/sponsorblock-safari"
-  
+
   depends_on macos: :sonoma
 
   app "SponsorBlock for YouTube.app"
