@@ -1,6 +1,6 @@
 cask "sponsorblock" do
   version "6.1.7+safari.0"
-  sha256 "273bab9dc7b267b1c4ba1d166559b269e07b765a6e316f57118df129195158d4"
+  sha256 "df004572074e79b5578bc095a3e452893f2ab85e463b92944b19f286ba377a37"
 
   url "https://github.com/danny900714/sponsorblock-safari/releases/download/v#{version}/sponsorblock-#{version}.dmg"
   name "SponsorBlock for YouTube"
