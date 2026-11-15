@@ -26,6 +26,7 @@ One tap, one command, no dialogs. No dragging icons into folders.
 | Cask                                      | Version                                                                                                                                                            | Source code                                         |
 |-------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------|
 | [better-lyrics](./Casks/better-lyrics.rb) | [![GitHub Release](https://img.shields.io/github/v/release/danny900714/better-lyrics-safari)](https://github.com/danny900714/better-lyrics-safari/releases/latest) | https://github.com/danny900714/better-lyrics-safari |
+| [sponsorblock](./Casks/sponsorblock.rb) | [![GitHub Release](https://img.shields.io/github/v/release/danny900714/sponsorblock-safari)](https://github.com/danny900714/sponsorblock-safari/releases/latest) | https://github.com/danny900714/sponsorblock-safari |
 
 ## License
 
